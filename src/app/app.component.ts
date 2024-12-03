@@ -2,11 +2,12 @@ import { Component , inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from './data.service';
 import { RouterOutlet } from '@angular/router';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule , RouterOutlet],
+  imports: [CommonModule , RouterOutlet , UserFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
