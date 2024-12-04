@@ -4,15 +4,18 @@ import { DataService } from './data.service';
 import { RouterOutlet } from '@angular/router';
 import { UserFormComponent } from './user-form/user-form.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { AppPaginatedListComponent } from './app-paginated-list/app-paginated-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule , RouterOutlet , UserFormComponent,TodoListComponent],
+  imports: [CommonModule , RouterOutlet , UserFormComponent,TodoListComponent , AppPaginatedListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  items2: string[] = ['item 1' , 'item 2' , 'item 3']  ;
+
   title = 'dep-inj';
   private dataService = inject(DataService);
   items: string[] = this.dataService.getData();
@@ -20,5 +23,9 @@ export class AppComponent {
   const newItem = `Item ${this.items.length + 1}`;
   this.dataService.addItem(newItem);
   this.items = this.dataService.getData();
+  }
+
+  addNewItem2() {
+    this.items.push(`Item ${this.items.length + 1}`);
   }
 }

@@ -1,0 +1,14 @@
+<div>
+    <h2>Paginated List</h2>
+    <ul>
+      @for (item of paginatedItems; track item) {
+        <li>{{ item }}</li>
+      }
+    </ul>
+    
+    <div class="pagination">
+      <button (click)="changePage(-1)" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button (click)="changePage(1)" [disabled]="currentPage === totalPages">Next</button>
+    </div>
+  </div>

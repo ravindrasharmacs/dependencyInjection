@@ -1,4 +1,15 @@
 <div>
+  <!-- Pagination list-->
+  <div>
+    <h1>Data Items</h1>
+    <!--html 5 syntax for loop-->
+    @for (item of items2; track item) {
+      <p>{{ item }}</p>
+    }
+    <button (click)="addNewItem2()">Add Item</button>
+  </div>
+  <app-app-paginated-list></app-app-paginated-list>
+  <router-outlet></router-outlet>
 
   <!--Todo list-->
   <h1>Todo List</h1>
