@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { DataService } from './data.service';
 import { RouterOutlet } from '@angular/router';
 import { UserFormComponent } from './user-form/user-form.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule , RouterOutlet , UserFormComponent],
+  imports: [CommonModule , RouterOutlet , UserFormComponent,TodoListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

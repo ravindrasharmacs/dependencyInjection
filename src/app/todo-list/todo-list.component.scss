@@ -1,0 +1,8 @@
+
+    .todo-app { max-width: 400px; margin: 0 auto; }
+    ul { list-style-type: none; padding: 0; }
+    li { display: flex; justify-content: space-between; align-items: center; margin: 10px 0; }
+    .completed { text-decoration: line-through; }
+    input[type="text"] { width: 100%; padding: 5px; margin-right: 10px; }
+    button { padding: 5px 10px; }
+  

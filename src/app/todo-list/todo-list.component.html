@@ -1,0 +1,34 @@
+
+    <div class="todo-app">
+      <h1>Todo List</h1>
+      <input 
+        #todoInput
+        (keyup.enter)="addTodo(todoInput.value); todoInput.value = ''" 
+        placeholder="Add new todo"
+      >
+      <button (click)="addTodo(todoInput.value); todoInput.value = ''">Add Todo</button>
+      
+      <ul>
+        @for (todo of todos; track todo.id) {
+          <li>
+            @if (editingId === todo.id) {
+              <input 
+                #editInput 
+                [value]="todo.text"
+                (keyup.enter)="updateTodo(todo.id, editInput.value)"
+                (blur)="updateTodo(todo.id, editInput.value)"
+              >
+            } @else {
+              <span [class.completed]="todo.completed" (click)="toggleTodo(todo.id)">
+                {{ todo.text }}
+              </span>
+              <button (click)="editTodo(todo.id)">Edit</button>
+            }
+            <button (click)="deleteTodo(todo.id)">Delete</button>
+          </li>
+        } @empty {
+          <li>No todos yet!</li>
+        }
+      </ul>
+    </div>
+  
