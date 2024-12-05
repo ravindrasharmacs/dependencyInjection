@@ -1,4 +1,23 @@
 <div>
+  <!--Modal for adding new item-->
+  <div>
+    <h1>Data Items</h1>
+    <!--html 5 syntax for loop-->
+    @for (item of items3; track item) {
+      <p>{{ item }}</p>
+    }
+    <button (click)="addNewItem3()">Add Item</button>
+  </div>
+  <app-app-paginated-list></app-app-paginated-list>
+  <router-outlet></router-outlet>
+
+  <button (click)="openModal()">Open Modal</button>
+
+  <app-modal [isOpen]="isModalOpen" (closeModal)="closeModal()" title="Example Modal">
+    <p>This is the content of the modal. You can put any HTML here.</p>
+    <button (click)="closeModal()">Close</button>
+  </app-modal>
+
   <!-- Pagination list-->
   <div>
     <h1>Data Items</h1>
