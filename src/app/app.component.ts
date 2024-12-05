@@ -6,11 +6,13 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { AppPaginatedListComponent } from './app-paginated-list/app-paginated-list.component';
 import { ModalComponent } from './modal/modal.component';
+import { DatePickerComponent } from './date-picker/date-picker.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule ,
+  imports: [DatePickerComponent, 
+    CommonModule ,
     ModalComponent,
      RouterOutlet , UserFormComponent,TodoListComponent , AppPaginatedListComponent],
   templateUrl: './app.component.html',
@@ -19,6 +21,8 @@ import { ModalComponent } from './modal/modal.component';
 export class AppComponent {
   items2: string[] = ['item 1' , 'item 2' , 'item 3']  ;
   items3: string[] = ['item 1' , 'item 2' , 'item 3']  ;
+  items4: string[] = ['item 1' , 'item 2' , 'item 3']  ;
+
   isModalOpen = false;
 
   title = 'dep-inj';
@@ -36,6 +40,10 @@ export class AppComponent {
 
   addNewItem3() {
     this.items3.push(`Item ${this.items3.length + 1}`);
+  }
+
+  addNewItem4() {
+    this.items4.push(`Item ${this.items4.length + 1}`);
   }
 
   openModal(){

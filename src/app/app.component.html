@@ -1,4 +1,24 @@
 <div>
+  <!-- Date picker on the top of the page -->
+  <h1>Data Items</h1>
+  @for (item of items; track item) {
+    <p>{{ item }}</p>
+  }
+  <button (click)="addNewItem4()">Add Item</button>
+
+<app-app-paginated-list></app-app-paginated-list>
+
+<h2>Date Picker</h2>
+<app-date-picker></app-date-picker>
+
+<button (click)="openModal()">Open Modal</button>
+
+<app-modal [isOpen]="isModalOpen" (closeModal)="closeModal()" title="Example Modal">
+  <p>This is the content of the modal. You can put any HTML here.</p>
+  <button (click)="closeModal()">Close</button>
+</app-modal>
+
+<router-outlet></router-outlet>
   <!--Modal for adding new item-->
   <div>
     <h1>Data Items</h1>
