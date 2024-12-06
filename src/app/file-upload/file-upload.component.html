@@ -1,0 +1,19 @@
+
+    <div class="file-upload">
+      <input type="file" (change)="onFileSelected($event)" #fileInput>
+      <button (click)="fileInput.click()">Choose File</button>
+      <button (click)="uploadFile()" [disabled]="!selectedFile">Upload</button>
+      
+      @if (uploadProgress > 0) {
+        <div class="progress-bar">
+          <div class="progress" [style.width.%]="uploadProgress"></div>
+        </div>
+        <p>{{ uploadProgress }}% Uploaded</p>
+      }
+      
+      @if (uploadComplete) {
+        <p class="success">File uploaded successfully!</p>
+      }
+    </div>
+  
+   

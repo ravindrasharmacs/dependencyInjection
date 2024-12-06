@@ -7,11 +7,13 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { AppPaginatedListComponent } from './app-paginated-list/app-paginated-list.component';
 import { ModalComponent } from './modal/modal.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [DatePickerComponent, 
+  imports: [FileUploadComponent,
+    DatePickerComponent, 
     CommonModule ,
     ModalComponent,
      RouterOutlet , UserFormComponent,TodoListComponent , AppPaginatedListComponent],
